@@ -1,6 +1,6 @@
 # SQL AND DBMS 2023
 --- 
-
+ 
 ## Day 1 
 
 ### Data types in SQL
