@@ -1,6 +1,6 @@
 # SQL AND DBMS 2023
 --- 
-
+ 
 ## Day 1 
 
 ### Data types in SQL
@@ -67,6 +67,7 @@ It will sort by default in Assecnding order
 ---
 ## DAY 2
 
+
 ### ALTER 
 
 - Add new column
@@ -118,3 +119,4 @@ It will sort by default in Assecnding order
  - SUM
  - AVG
  - COUNT
+
