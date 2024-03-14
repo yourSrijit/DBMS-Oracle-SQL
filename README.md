@@ -1,7 +1,7 @@
 # SQL AND DBMS 2023
 --- 
  
-## Day 1 
+## Day 1 ✅
 
 ### Data types in SQL
 ```
@@ -65,7 +65,7 @@ It will sort by default in Assecnding order
 ```
 
 ---
-## DAY 2
+## DAY 2 ✅
 
 
 ### ALTER 
@@ -119,4 +119,51 @@ It will sort by default in Assecnding order
  - SUM
  - AVG
  - COUNT
+ - SQRT
 
+### DATE OF BIRTH
+ ```
+ SELECT TRUNC(TRUNC(SYSDATE-DOB)/365) "AGE" FROM STUDENT;
+ SELECT MAX(TRUNC(TRUNC(SYSDATE-DOB)/365)) "MAXAGE" FROM STUDENT
+ ```
+
+---
+
+## DAY 3 ✅
+
+`Aggregate function only can use after Select and Having clause`
+
+### Find Max & Min Salary 
+```
+SELECT * FROM EMPLOYEE WHERE SALARY = (SELECT MAX(SALARY) FROM EMPLOYEE);             //1st Max
+
+
+SELECT MAX(SALARY) FROM EMPLOYEE WHERE SALARY < (SELECT MAX(SALARY) FROM EMPLOYEE);   
+SELECT * FROM EMPLOYEE WHERE SALARY = (SELECT MAX(SALARY) FROM EMPLOYEE WHERE SALARY < (SELECT MAX(SALARY) FROM EMPLOYEE));        ///2nd Max
+
+```
+
+### Oldest Employee
+
+ ```
+ SELECT * FROM STUDENT WHERE TRUNC((SYSDATE-DOB)/365) =(SELECT MAX(TRUNC((SYSDATE-DOB)/365)) Age  FROM STUDENT);
+
+ ```
+
+  - USE ` Distinct ` to remove duplicate
+
+### Check Constraint 
+
+```
+CREATE TABLE STUDENT
+(
+  ID VARCHAR2(3) CHECK (ID LIKE 'E%'),                      //check is the eid start with E
+  NAME VARCHAR2(20) NOT NULL,
+  CITY VARCHAR(10) CHECK( CITY IN('KOLKATA','PUNE' ,'DELHI')),
+  SALARY NUMBER(10) CHECK (SALARY >=5000),
+  DOB DATE,
+  PRIMARY KEY(ID)
+);
+
+```
+### Foreign Keyword 
