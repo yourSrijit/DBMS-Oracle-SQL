@@ -172,6 +172,8 @@ CREATE TABLE STUDENT
 
 ## Day 4 ✅
 Required Table 👇👇
+![Screenshot 2024-05-07 213845](https://github.com/yourSrijit/DBMS-Oracle-SQL/assets/91645620/c3629f22-3b26-470f-af65-fbd316d991dc)
+
 `Joinning` 
 
 ```
