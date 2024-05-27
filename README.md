@@ -204,3 +204,79 @@ SELECT DID,COUNT(ID) FROM WORK GROUP BY DID HAVING COUNT(ID)>=2;
 ```
 
 
+
+---
+## Joining in Oracle SQL
+ JOIN clause is used to combine data from two or more table based on related column between them.
+ There have for kind of Join method in Sql
+ - 1.Inner Join       -> Return Common element
+ - 2.Left Join        -> Return all record from left and the matched record from right table
+ - 3.Right Join       -> Return all record from right and the matched record from left table
+ - 4.Full Outer Join  -> Returns all records when there is a match in either left or right table
+
+ ---
+ ```
+ First Create the Table ✅✅
+
+
+ CREATE TABLE EMPLOYEE (
+  employee_id NUMBER,
+  employee_name VARCHAR2(50),
+  department_id NUMBER
+);
+INSERT INTO employee (employee_id, employee_name, department_id)
+VALUES (1, 'John Doe', 1);
+
+INSERT INTO employee (employee_id, employee_name, department_id)
+VALUES (2, 'Jane Smith', 2);
+
+INSERT INTO employee (employee_id, employee_name, department_id)
+VALUES (3, 'Michael Johnson', 1);
+--------------------------------------------------------------->
+
+CREATE TABLE work (
+  employee_id NUMBER,
+  project_id NUMBER,
+  hours_worked NUMBER
+);
+INSERT INTO work (employee_id, project_id, hours_worked)
+VALUES (1, 101, 20);
+
+INSERT INTO work (employee_id, project_id, hours_worked)
+VALUES (1, 102, 15);
+
+INSERT INTO work (employee_id, project_id, hours_worked)
+VALUES (2, 101, 25);
+
+INSERT INTO work (employee_id, project_id, hours_worked)
+VALUES (3, 102, 10);
+
+INSERT INTO work (employee_id, project_id, hours_worked)
+VALUES (4, 105, 15);
+INSERT INTO work (employee_id, project_id, hours_worked)
+VALUES (5, 106,16);
+INSERT INTO work (employee_id, project_id, hours_worked)
+VALUES (6, 107, 17);
+
+ ```
+
+ --- 
+ ### Inner Join 
+ ```
+ SELECT E.* FROM EMPLOYEE E INNER JOIN WORK W ON E.EMPLOYEE_ID = W.EMPLOYEE_ID;
+
+ ```
+### Left Join
+
+```
+SELECT E.* FROM EMPLOYEE E LEFT JOIN WORK W ON E.EMPLOYEE_ID = W.EMPLOYEE_ID;
+```
+
+### Right Join 
+```
+SELECT E.* FROM EMPLOYEE E RIGHT JOIN WORK W ON E.EMPLOYEE_ID = W.EMPLOYEE_ID;
+```
+### Full Join or Full Outer Join
+```
+SELECT E.* FROM EMPLOYEE E RIGHT JOIN WORK W ON E.EMPLOYEE_ID = W.EMPLOYEE_ID;
+```
