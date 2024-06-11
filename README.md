@@ -304,7 +304,7 @@ SELECT E.* FROM EMPLOYEE E RIGHT JOIN WORK W ON E.EMPLOYEE_ID = W.EMPLOYEE_ID;
 
   ((SELECT NAME FROM STUDENT WHERE ID IN ('E01','E06')) UNION (SELECT NAME FROM STUDENT WHERE ID IN('E06','E07')));
  ```
- ### Crearte a new table from old one
+ ### Create a new table from old one
  ```
  CREATE TABLE STUDENT1 AS SELECT * FROM STUDENT; -> it will create a new table with the data
  CREATE TABLE STUDNET1 AS SELECT * FROM STUDENT WHERE 1=2; -> It will create a anew table without the values
