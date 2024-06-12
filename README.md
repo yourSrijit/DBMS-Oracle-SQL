@@ -51,7 +51,7 @@ DELETE FROM STUDENT;                        //will delete the all rows of the ta
 DELETE FROM STUDENT WHERE NAME='SRIJIT'; // Tthis only delete that only filtered row
 ```
 
-### UpdaTE Table
+### Update Table
 ```
 UPDATE STUDENT SET NAME='KAMALIKA' WHERE ID='E01'
 ```
@@ -82,7 +82,7 @@ It will sort by default in Assecnding order
  ```
 -Drop
 ```
-ALTER TABLE STUDENT DROP REGNO;
+ALTER TABLE STUDENT DROP COLUMN REGNO;
 ```
 -RENAME
 ```
