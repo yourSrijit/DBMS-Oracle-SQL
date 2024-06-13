@@ -342,3 +342,11 @@ ORA-01045: user SRIJIT lacks CREATE SESSION privilege; logon denied  //give this
  REVOKE ALL ON SYSTEM.STUDENT FROM SRIJIT;
  REVOKE CONNECT FROM SRIJIT;
  ```
+
+
+ ---
+ `Mostly Asked Q`
+ ### Print the name of the 3 emplooyees having highest salary ;
+ ```
+ select * from(select s.*,row_number() over (order by salary desc) as rn from student s) t where t.rn<=3;
+ ```
