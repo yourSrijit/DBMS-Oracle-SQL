@@ -350,3 +350,4 @@ ORA-01045: user SRIJIT lacks CREATE SESSION privilege; logon denied  //give this
  ```
  select * from(select s.*,row_number() over (order by salary desc) as rn from student s) t where t.rn<=3;
  ```
+ 
